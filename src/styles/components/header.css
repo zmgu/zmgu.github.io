@@ -1,0 +1,44 @@
+@layer components {
+  .header {
+    @apply fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b;
+    background-color: rgb(235 230 217 / 0.92);
+    border-color: #cfc9b8;
+  }
+
+  .header-logo {
+    @apply text-xl font-mono;
+    color: #c86f50;
+  }
+
+  .nav-btn {
+    @apply relative py-1 text-sm;
+    color: #7a6e63;
+    transition: color 0.25s ease;
+  }
+  .nav-btn:hover {
+    color: #1a1512;
+  }
+
+  @media (min-width: 640px) {
+    .nav-btn {
+      font-size: 1rem;
+    }
+  }
+
+  .nav-btn--active {
+    color: #c86f50;
+  }
+
+  .nav-underline {
+    @apply absolute bottom-0 left-0 right-0 h-0.5;
+    background-color: #c86f50;
+    transform: scaleX(0);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .nav-underline--active {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}

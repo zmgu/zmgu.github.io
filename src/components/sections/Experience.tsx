@@ -1,0 +1,62 @@
+import { career, certifications, education } from '../../data/portfolio';
+
+export default function Experience() {
+  return (
+    <section id="experience" className="experience-section">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 className="text-xl sm:text-2xl font-bold mb-8 sm:mb-12">Experience</h2>
+
+        <div className="space-y-10 sm:space-y-14">
+
+          <div>
+            <h3 className="section-label mb-5">CAREER</h3>
+            <div className="space-y-5">
+              {career.map((job, index) => (
+                <div key={index} className="flex gap-4">
+                  <div className="flex flex-col items-center">
+                    <div className="career-dot" />
+                    {index < career.length - 1 && <div className="career-line" />}
+                  </div>
+                  <div className="flex-1 pb-2">
+                    <div className="career-item">
+                      <span className="career-period">{job.period}</span>
+                      <span className="career-company">{job.company}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="section-label mb-4">CERTIFICATIONS</h3>
+            <div className="flex flex-wrap gap-2">
+              {certifications.map((cert) => (
+                <div key={cert} className="cert-card">
+                  <div className="flex items-center gap-2">
+                    <div className="cert-dot" />
+                    {cert}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="section-label mb-4">EDUCATION</h3>
+            <div className="edu-grid">
+              {education.map((edu, index) => (
+                <div key={index} className="edu-card">
+                  <span className="career-period">{edu.period}</span>
+                  <span className="edu-name">{edu.name}</span>
+                  <span className="edu-content">{edu.content}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}

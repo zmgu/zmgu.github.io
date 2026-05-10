@@ -1,0 +1,8 @@
+@import 'tailwindcss' source(none);
+@source '../**/*.{js,ts,jsx,tsx}';
+@import 'tw-animate-css';
+@import './components/header.css';
+@import './components/hero.css';
+@import './components/experience.css';
+@import './components/projects.css';
+@import './components/footer.css';

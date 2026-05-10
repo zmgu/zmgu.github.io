@@ -1,0 +1,114 @@
+@layer components {
+
+  .profile-ring {
+    @apply rounded-full overflow-hidden shadow-md border shrink-0;
+    width: 7rem;
+    height: 7rem;
+    border-color: #cfc9b8;
+  }
+
+  @media (min-width: 640px) {
+    .profile-ring {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+
+  .profile-name {
+    @apply font-bold mb-2;
+    font-size: 1.875rem;
+    color: #1a1512;
+  }
+
+  @media (min-width: 640px) {
+    .profile-name {
+      font-size: 2.25rem;
+    }
+  }
+
+  .profile-title {
+    @apply mb-1;
+    font-size: 1rem;
+    color: #c86f50;
+  }
+
+  @media (min-width: 640px) {
+    .profile-title {
+      font-size: 1.125rem;
+    }
+  }
+
+  .profile-links {
+    @apply flex items-center gap-3 mt-3;
+    justify-content: center;
+  }
+
+  @media (min-width: 640px) {
+    .profile-links { justify-content: flex-start; }
+  }
+
+  .profile-link {
+    @apply rounded-md p-1.5 transition-colors;
+    color: #a09589;
+    border: 1px solid #cfc9b8;
+  }
+
+  .profile-link:hover {
+    color: #c86f50;
+    border-color: rgb(200 111 80 / 0.5);
+    background-color: rgb(200 111 80 / 0.08);
+  }
+
+  .profile-link-icon {
+    @apply w-4 h-4;
+  }
+
+  .bio-text {
+    @apply leading-relaxed;
+    font-size: 0.875rem;
+    color: #4a3f35;
+  }
+
+  @media (min-width: 640px) {
+    .bio-text {
+      font-size: 0.9375rem;
+    }
+  }
+
+  /* used in Hero and Experience */
+  .section-label {
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    color: #a09589;
+  }
+
+  .skill-badge {
+    @apply px-3 py-1.5 rounded-md font-mono transition-colors border;
+    font-size: 0.8125rem;
+    background-color: #f5f1e8;
+    border-color: rgb(200 111 80 / 0.35);
+    color: #c86f50;
+  }
+  .skill-badge:hover {
+    background-color: rgb(200 111 80 / 0.1);
+  }
+
+  .skill-badge--learning {
+    background-color: #f5f1e8;
+    border-color: #cfc9b8;
+    color: #7a6e63;
+  }
+  .skill-badge--learning:hover {
+    background-color: #ede8dc;
+  }
+
+  .skill-legend {
+    @apply flex items-center gap-1 font-mono;
+    font-size: 0.65rem;
+    color: #a09589;
+  }
+
+  .skill-legend-dot {
+    @apply w-2 h-2 rounded-full inline-block;
+  }
+}
