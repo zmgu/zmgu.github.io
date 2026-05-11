@@ -44,7 +44,7 @@ function ProjectFeatures({ features }: { features: Feature[] }) {
 export default function Projects() {
   return (
     <section id="projects" className="projects-section">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <h2 className="text-xl sm:text-2xl font-bold mb-8 sm:mb-12">Project</h2>
 
         <div className="space-y-12 sm:space-y-16">
@@ -55,23 +55,35 @@ export default function Projects() {
                 {project.image && (
                   <img src={project.image} alt={project.name} className="project-logo" />
                 )}
-                <div>
-                  <h3 className="project-title">{project.name}</h3>
-                  <span className="project-period">{project.period}</span>
+                <div className="project-info">
+                  <div className="project-title-row">
+                    <h3 className="project-title">{project.name}</h3>
+                    <span className="project-period">{project.period}</span>
+                  </div>
+                  {project.description && (
+                    <p className="project-description">{project.description}</p>
+                  )}
                 </div>
               </div>
 
-              {project.stack.filter(Boolean).length > 0 && (
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {project.stack.filter(Boolean).map((tech) => (
-                    <span key={tech} className="project-tech-badge">{tech}</span>
-                  ))}
-                </div>
-              )}
-
-              {project.features.length > 0 && (
-                <ProjectFeatures features={project.features} />
-              )}
+              {(() => {
+                const stack = project.stack.filter(Boolean);
+                const features = project.features.filter(f => f.title);
+                return (
+                  <>
+                    {stack.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 mt-4 mb-6">
+                        {stack.map((tech) => (
+                          <span key={tech} className="project-tech-badge">{tech}</span>
+                        ))}
+                      </div>
+                    )}
+                    {features.length > 0 && (
+                      <ProjectFeatures features={features} />
+                    )}
+                  </>
+                );
+              })()}
 
             </div>
           ))}

@@ -14,7 +14,7 @@
   }
 
   .footer-btn {
-    @apply flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition-all border w-full;
+    @apply flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg transition-all border w-full;
     background-color: #dfd9cb;
     border-color: #cfc9b8;
   }
@@ -23,31 +23,17 @@
     border-color: #c86f50;
   }
 
-  @media (min-width: 640px) {
-    .footer-btn { width: auto; }
-  }
-
   .footer-icon {
-    @apply w-5 h-5;
+    @apply w-4 h-4;
     color: #c86f50;
   }
 
   .footer-btn-text {
     color: #4a3f35;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
   }
   .footer-btn:hover .footer-btn-text {
     color: #c86f50;
-  }
-
-  .cta-heading {
-    @apply font-bold mb-3;
-    font-size: 1.25rem;
-    color: #1a1512;
-  }
-
-  @media (min-width: 640px) {
-    .cta-heading { font-size: 1.5rem; }
   }
 
   .cta-sub {

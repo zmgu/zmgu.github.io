@@ -13,24 +13,33 @@
   }
 
   .project-header {
-    @apply flex items-center gap-4 mb-5 sm:mb-6;
+    @apply flex items-center gap-4 mb-5 sm:mb-4;
     border-left: 3px solid #c86f50;
     padding-left: 1rem;
   }
 
   .project-logo {
     @apply rounded-md object-contain shrink-0;
-    width: 2.75rem;
-    height: 2.75rem;
+    width: 3.25rem;
+    height: 3.25rem;
     background-color: #ffffff;
     padding: 0.25rem;
   }
 
   @media (min-width: 640px) {
     .project-logo {
-      width: 3.25rem;
-      height: 3.25rem;
+      width: 3.5rem;
+      height: 3.5rem;
     }
+  }
+
+  .project-info {
+    @apply flex flex-col flex-1;
+    gap: 0.2rem;
+  }
+
+  .project-title-row {
+    @apply flex items-baseline gap-3;
   }
 
   .project-title {
@@ -44,7 +53,7 @@
   }
 
   .project-period {
-    @apply font-mono block;
+    @apply font-mono;
     font-size: 0.75rem;
     color: #c86f50;
   }
@@ -52,7 +61,6 @@
   .feature-panel {
     display: flex;
     flex-direction: column;
-    margin-left: -1rem;
   }
 
   @media (min-width: 640px) {
@@ -60,13 +68,12 @@
       flex-direction: row;
       align-items: flex-start;
       gap: 1.5rem;
-      margin-left: -1.5rem;
     }
   }
 
   .feature-list {
     @apply space-y-0.5;
-    padding-left: 1.75rem;
+    padding-left: 0;
     padding-right: 1rem;
   }
 
@@ -74,13 +81,13 @@
     .feature-list {
       width: 50%;
       flex-shrink: 0;
-      padding-left: 2.25rem;
+      padding-left: 0;
       padding-right: 0;
     }
   }
 
   .feature-item {
-    @apply flex items-start gap-2 w-full text-left rounded;
+    @apply flex items-center gap-2 w-full text-left rounded;
     padding: 0.2rem 0.5rem;
     border-left: 2px solid transparent;
     cursor: pointer;
@@ -100,7 +107,6 @@
   .feature-detail-inline {
     display: grid;
     grid-template-rows: 0fr;
-    margin-left: 0.85rem;
     transition: grid-template-rows 0.25s ease, margin-top 0.2s ease;
   }
 
@@ -159,6 +165,14 @@
   .feature-detail-body {
     @apply text-xs leading-relaxed;
     color: #7a6e63;
+    white-space: pre-line;
+  }
+
+  .project-description {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: #7a6e63;
+    margin-top: 0.15rem;
   }
 
   .project-tech-badge {

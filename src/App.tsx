@@ -38,7 +38,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#ebe6d9', color: '#1a1512' }}>
+    <div className="app-root">
       <Header activeSection={activeSection} onScrollTo={handleScrollTo} />
       <Hero />
       <Experience />

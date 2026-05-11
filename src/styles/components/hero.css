@@ -1,16 +1,16 @@
 @layer components {
 
   .profile-ring {
-    @apply rounded-full overflow-hidden shadow-md border shrink-0;
+    @apply rounded-full overflow-hidden shrink-0;
     width: 7rem;
     height: 7rem;
-    border-color: #cfc9b8;
+    border: 1px solid rgb(200 111 80 / 0.25);
   }
 
   @media (min-width: 640px) {
     .profile-ring {
-      width: 10rem;
-      height: 10rem;
+      width: 9rem;
+      height: 9rem;
     }
   }
 
@@ -110,5 +110,23 @@
 
   .skill-legend-dot {
     @apply w-2 h-2 rounded-full inline-block;
+  }
+
+  .skill-legend-dot--work {
+    background-color: #c86f50;
+  }
+
+  .skill-legend-dot--learning {
+    background-color: #a09589;
+  }
+
+  .hero-section {
+    @apply pt-20 sm:pt-28 pb-10 sm:pb-14 border-b;
+    border-color: #cfc9b8;
+  }
+
+  .profile-img {
+    @apply w-full h-full object-cover;
+    transform: scale(1.5) translate(8%, -10%);
   }
 }

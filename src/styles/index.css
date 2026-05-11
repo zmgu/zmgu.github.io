@@ -6,3 +6,9 @@
 @import './components/experience.css';
 @import './components/projects.css';
 @import './components/footer.css';
+
+.app-root {
+  min-height: 100vh;
+  background-color: #ebe6d9;
+  color: #1a1512;
+}

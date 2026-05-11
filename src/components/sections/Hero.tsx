@@ -3,8 +3,8 @@ import { profile, skills, contact } from '../../data/portfolio';
 
 export default function Hero() {
   return (
-    <section id="hero" className="pt-20 sm:pt-28 pb-10 sm:pb-14 border-b" style={{ borderColor: '#cfc9b8' }}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+    <section id="hero" className="hero-section">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
 
         {/* 프로필 */}
         <div className="flex flex-col items-center sm:flex-row sm:items-start gap-6 sm:gap-8 mb-10 sm:mb-12">
@@ -12,8 +12,7 @@ export default function Hero() {
             <img
               src="/profile.png"
               alt="프로필 사진"
-              className="w-full h-full object-cover"
-              style={{ transform: 'scale(1.5) translate(8%, -10%)' }}
+              className="profile-img"
             />
           </div>
           <div className="flex-1 text-center sm:text-left">
@@ -50,11 +49,11 @@ export default function Hero() {
             <h3 className="section-label">TECH STACK</h3>
             <div className="flex items-center gap-3">
               <span className="skill-legend">
-                <span className="skill-legend-dot" style={{ backgroundColor: '#c86f50' }} />
+                <span className="skill-legend-dot skill-legend-dot--work" />
                 실무
               </span>
               <span className="skill-legend">
-                <span className="skill-legend-dot" style={{ backgroundColor: '#a09589' }} />
+                <span className="skill-legend-dot skill-legend-dot--learning" />
                 개인
               </span>
             </div>

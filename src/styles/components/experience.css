@@ -12,6 +12,11 @@
     }
   }
 
+  .career-dot-wrapper {
+    @apply flex items-start;
+    padding-top: 0.35rem;
+  }
+
   .career-dot {
     @apply w-4 h-4 rounded-full shrink-0;
     background-color: #c86f50;
@@ -40,16 +45,16 @@
   }
 
   .cert-card {
-    @apply px-3 py-1 rounded-md border;
+    @apply px-3 py-1 rounded-md border font-medium;
     font-size: 0.75rem;
     background-color: #f5f1e8;
-    border-color: #cfc9b8;
-    color: #7a6e63;
+    border-color: rgb(200 111 80 / 0.35);
+    color: #c86f50;
   }
 
   .cert-dot {
     @apply w-1.5 h-1.5 rounded-full shrink-0;
-    background-color: #a09589;
+    background-color: #c86f50;
   }
 
   .edu-grid {
@@ -78,9 +83,27 @@
     color: #1a1512;
   }
 
+  .edu-organizer {
+    font-size: 0.75rem;
+    color: #a09589;
+    margin-bottom: 0.25rem;
+  }
+
   .edu-content {
     font-size: 0.8125rem;
     line-height: 1.6;
     color: #7a6e63;
+  }
+
+  .edu-content--bullet {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .edu-bullet {
+    color: #c86f50;
+    shrink: 0;
+    font-size: 0.625rem;
   }
 }
