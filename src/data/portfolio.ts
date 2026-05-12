@@ -29,7 +29,7 @@ export const profile = {
   title: 'Backend Developer',
   bio: [
     'Java 백엔드를 주력으로, 필요에 따라 프론트엔드까지 담당해온 개발자입니다.',
-    '공공기관 상담 시스템 개발 및 운영을 통해 안정성과 유지보수성의 중요성을 느끼며 성장해 왔습니다.',
+    '공공기관 상담 플랫폼 개발 및 운영을 통해 안정성과 유지보수성을 중심으로 개발 역량을 키워 왔습니다.',
     '원활한 소통과 읽기 좋은 코드로 동료의 고민을 덜어주는, 함께 일하고 싶은 개발자를 지향합니다.',
   ],
 };
@@ -41,7 +41,7 @@ export const contact = {
 };
 
 export const skills = {
-  work:     ['Java', 'JavaScript', 'eGovFrame', 'SpringBoot', 'JSP', 'JPA', 'MyBatis', 'Oracle', 'MySQL', 'Redis', 'Git', 'SVN'],
+  work:     ['Java', 'eGovFrame', 'SpringBoot', 'JSP', 'JPA', 'MyBatis', 'Oracle', 'MySQL', 'Redis'],
   personal: ['React', 'TypeScript', 'Docker'],
 };
 
