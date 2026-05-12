@@ -7,8 +7,24 @@
 @import './components/projects.css';
 @import './components/footer.css';
 
+:root {
+  --color-primary: #c86f50;
+  --color-primary-rgb: 200 111 80;
+  --color-border: #cfc9b8;
+  --color-bg-page: #ebe6d9;
+  --color-bg-page-rgb: 235 230 217;
+  --color-bg-card: #f5f1e8;
+  --color-bg-card-hover: #ede8dc;
+  --color-bg-btn: #dfd9cb;
+  --color-text: #1a1512;
+  --color-text-medium: #4a3f35;
+  --color-text-muted: #7a6e63;
+  --color-text-subtle: #a09589;
+  --color-white: #ffffff;
+}
+
 .app-root {
   min-height: 100vh;
-  background-color: #ebe6d9;
-  color: #1a1512;
+  background-color: var(--color-bg-page);
+  color: var(--color-text);
 }

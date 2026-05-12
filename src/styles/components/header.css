@@ -1,22 +1,22 @@
 @layer components {
   .header {
     @apply fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b;
-    background-color: rgb(235 230 217 / 0.92);
-    border-color: #cfc9b8;
+    background-color: rgb(var(--color-bg-page-rgb) / 0.92);
+    border-color: var(--color-border);
   }
 
   .header-logo {
     @apply text-xl font-mono;
-    color: #c86f50;
+    color: var(--color-primary);
   }
 
   .nav-btn {
     @apply relative py-1 text-sm;
-    color: #7a6e63;
+    color: var(--color-text-muted);
     transition: color 0.25s ease;
   }
   .nav-btn:hover {
-    color: #1a1512;
+    color: var(--color-text);
   }
 
   @media (min-width: 640px) {
@@ -26,12 +26,12 @@
   }
 
   .nav-btn--active {
-    color: #c86f50;
+    color: var(--color-primary);
   }
 
   .nav-underline {
     @apply absolute bottom-0 left-0 right-0 h-0.5;
-    background-color: #c86f50;
+    background-color: var(--color-primary);
     transform: scaleX(0);
     opacity: 0;
     transition: transform 0.25s ease, opacity 0.25s ease;

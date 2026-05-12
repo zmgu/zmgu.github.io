@@ -1,8 +1,4 @@
-const NAV_ITEMS = [
-  { name: 'About', id: 'hero' },
-  { name: 'Experience', id: 'experience' },
-  { name: 'Projects', id: 'projects' },
-] as const;
+import { navigation } from '../data/portfolio';
 
 interface HeaderProps {
   activeSection: string;
@@ -13,16 +9,16 @@ export default function Header({ activeSection, onScrollTo }: HeaderProps) {
   return (
     <header className="header">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        <div className="header-logo">{''}</div>
+        <div className="header-logo" />
         <nav className="flex gap-4 sm:gap-8">
-          {NAV_ITEMS.map((item) => (
+          {navigation.map((item) => (
             <button
-              key={item.name}
+              key={item.label}
               onClick={() => onScrollTo(item.id)}
-              className={`nav-btn ${activeSection === item.name ? 'nav-btn--active' : ''}`}
+              className={`nav-btn ${activeSection === item.label ? 'nav-btn--active' : ''}`}
             >
-              {item.name}
-              <div className={`nav-underline ${activeSection === item.name ? 'nav-underline--active' : ''}`} />
+              {item.label}
+              <div className={`nav-underline ${activeSection === item.label ? 'nav-underline--active' : ''}`} />
             </button>
           ))}
         </nav>

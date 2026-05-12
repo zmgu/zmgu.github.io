@@ -6,7 +6,7 @@ export interface Career {
 export interface Education {
   period: string;
   name: string;
-  organizer: string;
+  organizer?: string;
   content: string[];
 }
 
@@ -76,13 +76,19 @@ export const education: Education[] = [
   },
 ];
 
+export const navigation = [
+  { id: 'hero',       label: 'About' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects',   label: 'Projects' },
+] as const;
+
 export const projects: Project[] = [
   {
     name: '한국관광공사 KOTIS',
     period: '2026.05 - 현재',
     image: '/kotis.jpg',
     description: '국내외 관광 안내를 위한 통합 상담 플랫폼이며, 망 분리 환경 기반의 시스템 운영 및 유지보수 담당',
-    stack: [''],
+    stack: [],
     features: [
       { title:  '인수인계 기반 문서 체계 수립',
         detail: '인수 초기 단계로 인수인계 산출물 정리, 시스템 아키텍처 구성도 작성, 운영 매뉴얼 작성을 통해 안정적인 유지보수 기반 마련'

@@ -15,34 +15,34 @@
 
   .footer-btn {
     @apply flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg transition-all border w-full;
-    background-color: #dfd9cb;
-    border-color: #cfc9b8;
+    background-color: var(--color-bg-btn);
+    border-color: var(--color-border);
   }
   .footer-btn:hover {
-    background-color: rgb(200 111 80 / 0.1);
-    border-color: #c86f50;
+    background-color: rgb(var(--color-primary-rgb) / 0.1);
+    border-color: var(--color-primary);
   }
 
   .footer-icon {
     @apply w-4 h-4;
-    color: #c86f50;
+    color: var(--color-primary);
   }
 
   .footer-btn-text {
-    color: #4a3f35;
+    color: var(--color-text-medium);
     font-size: 0.8125rem;
   }
   .footer-btn:hover .footer-btn-text {
-    color: #c86f50;
+    color: var(--color-primary);
   }
 
   .cta-sub {
     font-size: 0.875rem;
-    color: #7a6e63;
+    color: var(--color-text-muted);
   }
 
   .cta-copyright {
     @apply text-xs font-mono mt-10;
-    color: #a09589;
+    color: var(--color-text-subtle);
   }
 }

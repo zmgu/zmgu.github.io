@@ -4,20 +4,15 @@ import Hero from './components/sections/Hero';
 import Experience from './components/sections/Experience';
 import Projects from './components/sections/Projects';
 import Footer from './components/Footer';
-
-const SECTIONS = [
-  { id: 'hero',       label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects',   label: 'Projects' },
-];
+import { navigation } from './data/portfolio';
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState('About');
+  const [activeSection, setActiveSection] = useState(navigation[0].label);
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
 
-    SECTIONS.forEach(({ id, label }) => {
+    navigation.forEach(({ id, label }) => {
       const el = document.getElementById(id);
       if (!el) return;
 
