@@ -4,3 +4,4 @@ dist/
 *.local
 *.local.*
 .claude/
+package-lock.json
