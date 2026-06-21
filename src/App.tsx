@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/sections/Hero';
-import Experience from './components/sections/Experience';
 import Projects from './components/sections/Projects';
 import Footer from './components/Footer';
 import { navigation } from './data/portfolio';
@@ -36,7 +35,6 @@ export default function App() {
     <div className="app-root">
       <Header activeSection={activeSection} onScrollTo={handleScrollTo} />
       <Hero />
-      <Experience />
       <Projects />
       <Footer />
     </div>

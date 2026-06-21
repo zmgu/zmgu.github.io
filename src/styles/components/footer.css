@@ -30,7 +30,7 @@
 
   .footer-btn-text {
     color: var(--color-text-medium);
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
   }
   .footer-btn:hover .footer-btn-text {
     color: var(--color-primary);

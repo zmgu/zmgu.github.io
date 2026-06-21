@@ -8,18 +8,18 @@
 @import './components/footer.css';
 
 :root {
-  --color-primary: #c86f50;
-  --color-primary-rgb: 200 111 80;
-  --color-border: #cfc9b8;
-  --color-bg-page: #ebe6d9;
-  --color-bg-page-rgb: 235 230 217;
-  --color-bg-card: #f5f1e8;
-  --color-bg-card-hover: #ede8dc;
-  --color-bg-btn: #dfd9cb;
-  --color-text: #1a1512;
-  --color-text-medium: #4a3f35;
-  --color-text-muted: #7a6e63;
-  --color-text-subtle: #a09589;
+  --color-primary: #4EFFEA;
+  --color-primary-rgb: 78 255 234;
+  --color-border: #373C44;
+  --color-bg-page: #212429;
+  --color-bg-page-rgb: 33 36 41;
+  --color-bg-card: #292D34;
+  --color-bg-card-hover: #31363E;
+  --color-bg-btn: #2D3138;
+  --color-text: #FFFFFF;
+  --color-text-medium: #C8C8C8;
+  --color-text-muted: #909090;
+  --color-text-subtle: #606060;
   --color-white: #ffffff;
 }
 
@@ -27,4 +27,5 @@
   min-height: 100vh;
   background-color: var(--color-bg-page);
   color: var(--color-text);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
 }

@@ -1,0 +1,77 @@
+========================================================
+  파일.jpg 색상 분석
+  출처: Amando Redes — 폴더 탭 컨셉 소셜미디어 디자인
+========================================================
+
+
+[ 배경 ]
+
+  다크 차콜 (메인 배경)   #1C1C1E
+  → 완전한 블랙이 아닌 약간 따뜻한 다크 그레이
+  → texture.jpg (캔버스/린넨 질감)가 위에 올라가 있어 단색이 아님
+
+
+[ 포인트 컬러 ]
+
+  라임/옐로우그린 (DICIEMBRE 탭)   #B8D435
+  라벤더/퍼플 (NOVIEMBRE 탭)       #8B8FD4
+
+
+[ 텍스트 컬러 ]
+
+  대형 텍스트 "OCTUBRE"            #8B8FD4   (탭 라벤더와 동일)
+  서브 텍스트 "FECHAS IMPORTANTES" #C4B8E8   (연한 라벤더)
+  탭 레이블 텍스트                 #E8E4F8   (거의 화이트에 가까운 연보라)
+
+
+[ texture.jpg 구현 방법 ]
+
+  파일.jpg의 배경이 바로 이 기법임.
+  어두운 배경색 위에 texture.jpg(캔버스 질감)를 올려서 단색이 아닌 느낌을 만듦.
+
+  방법 1 (권장) — ::before 로 텍스처 올리기
+  ─────────────────────────────────────────
+    .app-root {
+      background-color: #1C1C1E;   /* 배경색만 여기서 제어 */
+    }
+
+    .app-root::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url('/texture.jpg');
+      background-size: cover;
+      opacity: 0.06;               /* 이 값으로 질감 강도 조절 */
+      pointer-events: none;
+      z-index: 0;
+    }
+
+  방법 2 — background-blend-mode
+  ─────────────────────────────────────────
+    .app-root {
+      background-color: #1C1C1E;
+      background-image: url('/texture.jpg');
+      background-blend-mode: overlay;
+      background-size: cover;
+    }
+
+  opacity 수치 가이드
+    0.03 ~ 0.05  파일.jpg처럼 은은하게
+    0.08 ~ 0.12  질감이 좀 더 뚜렷하게
+    0.15 이상    캔버스 느낌이 강하게 남
+
+
+[ 포트폴리오 적용 시 컬러 조합 예시 ]
+
+  다크 모드 (파일.jpg 기반):
+    --color-bg-page    #1C1C1E
+    --color-bg-card    #2A2A2C
+    --color-text       #F0EEFF
+    --color-primary    #8B8FD4   (라벤더)
+      또는
+    --color-primary    #B8D435   (라임)
+
+  ※ 둘 다 쓰면 튀므로 포인트는 하나만 선택.
+  ※ texture.jpg는 public/ 폴더로 이동해야 배포 시 적용됨.
+
+========================================================

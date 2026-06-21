@@ -13,7 +13,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="portfolio-section">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <h2 className="section-title">Project</h2>
 
         <div className="space-y-12 sm:space-y-16">

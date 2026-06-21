@@ -1,6 +1,9 @@
 export interface Career {
   period: string;
   company: string;
+  rank?: string;
+  role?: string;
+  projects?: string[];
 }
 
 export interface Education {
@@ -8,6 +11,12 @@ export interface Education {
   name: string;
   organizer?: string;
   content: string[];
+}
+
+export interface SkillCategory {
+  category: string;
+  color: string;
+  items: string[];
 }
 
 export interface Feature {
@@ -27,6 +36,7 @@ export interface Project {
 export const profile = {
   name: '전민혁',
   title: 'Backend Developer',
+  badge: '함께 일하고 싶은 개발자',
   bio: [
     'Java 백엔드를 주력으로, 필요에 따라 프론트엔드까지 담당해온 개발자입니다.',
     '공공기관 상담 플랫폼 개발 및 운영을 통해 안정성과 유지보수성을 중심으로 개발 역량을 키워 왔습니다.',
@@ -40,10 +50,17 @@ export const contact = {
   blog: 'https://zmgu.tistory.com/',
 };
 
-export const skills = {
-  work:     ['Java', 'eGovFrame', 'SpringBoot', 'JSP', 'JPA', 'MyBatis', 'Oracle', 'MySQL', 'Redis'],
-  personal: ['React', 'TypeScript', 'Docker'],
-};
+export const skills: SkillCategory[] = [
+  { category: '언어',        color: '#4EFFEA', items: ['Java', 'TypeScript'] },
+  { category: '프레임워크',   color: '#79B8FF', items: ['SpringBoot', 'eGovFrame', 'React'] },
+  { category: 'ORM / 쿼리',  color: '#B392F0', items: ['JPA', 'MyBatis'] },
+  { category: '데이터베이스', color: '#85E89D', items: ['Oracle', 'MySQL', 'Redis'] },
+  { category: '기타',        color: '#FDAAA9', items: ['JSP', 'Docker'] },
+];
+
+export const stats = [
+  { value: '2년+', label: '경력' },
+];
 
 export const certifications: string[] = [
   '정보처리기사',
@@ -52,7 +69,13 @@ export const certifications: string[] = [
 ];
 
 export const career: Career[] = [
-  { period: '2024.01 ~', company: '에이아이커넥트' },
+  {
+    period: '2024.01 ~',
+    company: '에이아이커넥트',
+    rank: '대리',
+    role: '공공기관 상담 플랫폼 백엔드 개발 및 운영',
+    projects: ['외교부 영사안전콜센터', '한국관광공사 KOTIS'],
+  },
 ];
 
 export const education: Education[] = [
@@ -77,9 +100,8 @@ export const education: Education[] = [
 ];
 
 export const navigation = [
-  { id: 'hero',       label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects',   label: 'Projects' },
+  { id: 'hero',     label: 'About' },
+  { id: 'projects', label: 'Projects' },
 ] as const;
 
 export const projects: Project[] = [

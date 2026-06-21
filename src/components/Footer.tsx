@@ -4,7 +4,7 @@ import { contact } from '../data/portfolio';
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
 
 
         <p className="cta-sub">궁금한 점이 있으시다면 편하게 연락해 주세요.</p>

@@ -8,7 +8,7 @@ interface HeaderProps {
 export default function Header({ activeSection, onScrollTo }: HeaderProps) {
   return (
     <header className="header">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <div className="header-logo" />
         <nav className="flex gap-4 sm:gap-8">
           {navigation.map((item) => (
