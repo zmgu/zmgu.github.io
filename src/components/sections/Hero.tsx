@@ -1,17 +1,36 @@
-import { Mail, Github, BookOpen } from 'lucide-react';
+import { useState } from 'react';
+import { Mail, Github, BookOpen, Check } from 'lucide-react';
 import { profile, skills, contact, career, certifications, education } from '../../data/portfolio';
 
 export default function Hero() {
+  const [emailCopied, setEmailCopied] = useState(false);
+  const [emailVisible, setEmailVisible] = useState(true);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(contact.email);
+    setEmailVisible(false);
+    setTimeout(() => {
+      setEmailCopied(true);
+      setEmailVisible(true);
+      setTimeout(() => {
+        setEmailVisible(false);
+        setTimeout(() => {
+          setEmailCopied(false);
+          setEmailVisible(true);
+        }, 150);
+      }, 2000);
+    }, 150);
+  };
+
   return (
     <section id="hero" className="hero-section">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* About: 좌우 2컬럼 */}
-        <div className="about-layout">
+        <div className="about-layout reveal">
 
           {/* 왼쪽: 소개 */}
           <div className="about-intro">
-            <span className="about-badge">{profile.badge}</span>
             <h1 className="about-headline">
               안녕하세요, 백엔드 개발자<br />
               <span className="about-name">{profile.name}</span>입니다
@@ -29,17 +48,22 @@ export default function Hero() {
             <p className="about-card-name">{profile.name}</p>
             <p className="about-card-title">{profile.title}</p>
             <div className="about-card-links">
-              <a href={`mailto:${contact.email}`} className="about-card-link">
-                <Mail size={14} className="about-card-link-icon" />
-                <span>{contact.email}</span>
-              </a>
+              <button onClick={handleCopyEmail} className="about-card-link">
+                <span className="about-card-link-inner" style={{ opacity: emailVisible ? 1 : 0, transition: 'opacity 0.15s ease' }}>
+                  {emailCopied
+                    ? <Check size={18} className="about-card-link-icon" style={{ color: '#01BD70' }} />
+                    : <Mail size={18} className="about-card-link-icon" style={{ color: '#01BD70' }} />
+                  }
+                  <span>{emailCopied ? '복사 완료' : contact.email}</span>
+                </span>
+              </button>
               <a href={contact.github} target="_blank" rel="noopener noreferrer" className="about-card-link">
-                <Github size={14} className="about-card-link-icon" />
+                <Github size={18} className="about-card-link-icon" style={{ color: '#79B8FF' }} />
                 <span>{contact.github.replace('https://', '')}</span>
               </a>
               {contact.blog && (
                 <a href={contact.blog} target="_blank" rel="noopener noreferrer" className="about-card-link">
-                  <BookOpen size={14} className="about-card-link-icon" />
+                  <BookOpen size={18} className="about-card-link-icon" style={{ color: '#FDAAA9' }} />
                   <span>{contact.blog.replace('https://', '').replace(/\/$/, '')}</span>
                 </a>
               )}
@@ -49,7 +73,7 @@ export default function Hero() {
         </div>
 
         {/* 기술 스택 */}
-        <div className="skill-section">
+        <div className="skill-section reveal">
           <h3 className="section-label mb-5">기술 스택</h3>
           <div className="skill-table">
             {skills.map((cat) => (
@@ -81,7 +105,7 @@ export default function Hero() {
         {/* 경력 / 자격증 / 교육 */}
         <div className="space-y-16 sm:space-y-20">
 
-          <div>
+          <div className="reveal">
             <h3 className="section-label mb-6">경력</h3>
             <div className="section-bg-card space-y-5">
               {career.map((job, index) => (
@@ -94,7 +118,7 @@ export default function Hero() {
                   </div>
                   <div className="flex-1 pb-2">
                     <div className="career-item">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-baseline gap-2">
                         <span className="career-company">{job.company}</span>
                         {job.rank && <span className="career-rank">{job.rank}</span>}
                       </div>
@@ -114,7 +138,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div>
+          <div className="reveal">
             <h3 className="section-label mb-6">자격증</h3>
             <div className="flex flex-wrap gap-3">
               {certifications.map((cert) => (
@@ -128,7 +152,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div>
+          <div className="reveal">
             <h3 className="section-label mb-6">교육</h3>
             <div className="edu-grid">
               {education.map((edu, index) => (

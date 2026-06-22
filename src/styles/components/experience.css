@@ -5,6 +5,7 @@
     border: 1px solid var(--color-border);
     border-radius: 0.75rem;
     padding: 1.25rem 1.5rem;
+    box-shadow: 3px 3px 8px rgb(0 0 0 / 0.15);
   }
 
   @media (min-width: 640px) {
@@ -30,7 +31,7 @@
   }
 
   .career-item {
-    @apply flex flex-col gap-1;
+    @apply flex flex-col gap-2;
   }
 
   .career-company {
@@ -41,13 +42,14 @@
   }
 
   .career-rank {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--color-text-muted);
-    margin-left: 0.75rem;
+    margin-left: 0.875rem;
   }
 
   .career-role {
     font-size: 0.9375rem;
+    line-height: 1.75;
     color: var(--color-text-medium);
     letter-spacing: -0.02em;
     margin-top: 0.25rem;
@@ -62,9 +64,9 @@
 
   .career-project-tag {
     font-size: 0.8125rem;
-    color: var(--color-text-muted);
-    background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
+    color: var(--color-text-medium);
+    background-color: rgb(var(--color-primary-rgb) / 0.05);
+    border: 1px solid rgb(var(--color-primary-rgb) / 0.3);
     border-radius: 0.375rem;
     padding: 0.15rem 0.625rem;
   }
@@ -96,10 +98,11 @@
   }
 
   .edu-card {
-    @apply flex flex-col gap-1 rounded-lg p-4;
+    @apply flex flex-col gap-2 rounded-lg p-4;
     background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-left: 2px solid rgb(var(--color-primary-rgb) / 0.5);
+    box-shadow: 3px 3px 8px rgb(0 0 0 / 0.15);
   }
 
   .edu-name {
@@ -117,9 +120,9 @@
 
   .edu-content {
     font-size: 0.875rem;
-    line-height: 1.7;
+    line-height: 1.85;
     letter-spacing: -0.02em;
-    color: var(--color-text);
+    color: var(--color-text-medium);
     display: flex;
     align-items: center;
     gap: 0.375rem;

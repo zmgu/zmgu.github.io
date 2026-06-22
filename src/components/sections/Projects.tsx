@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { projects, Feature } from '../../data/portfolio';
+import { ChevronRight } from 'lucide-react';
+import { projects, Feature, skillColorMap } from '../../data/portfolio';
 
 const renderFeatureDetail = (feat: Feature) => (
   <>
@@ -14,15 +15,15 @@ export default function Projects() {
   return (
     <section id="projects" className="portfolio-section">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="section-title">Project</h2>
+        <h2 className="section-title reveal">Project</h2>
 
-        <div className="space-y-12 sm:space-y-16">
+        <div className="space-y-16 sm:space-y-24">
           {projects.map((project, index) => {
             const selectedFeature = selected[index] ?? 0;
             const features = project.features;
 
             return (
-              <div key={index}>
+              <div key={index} className="reveal" data-delay={index * 100}>
 
                 <div className="project-header">
                   {project.image && (
@@ -41,9 +42,22 @@ export default function Projects() {
 
                 {project.stack.length > 0 && (
                   <div className="flex flex-wrap gap-1.5 mt-4 mb-6">
-                    {project.stack.map((tech) => (
-                      <span key={tech} className="project-tech-badge">{tech}</span>
-                    ))}
+                    {project.stack.map((tech) => {
+                      const color = skillColorMap[tech];
+                      return (
+                        <span
+                          key={tech}
+                          className="project-tech-badge"
+                          style={color ? {
+                            borderColor: color + '55',
+                            color: color,
+                            backgroundColor: color + '0D',
+                          } : undefined}
+                        >
+                          {tech}
+                        </span>
+                      );
+                    })}
                   </div>
                 )}
 
@@ -58,6 +72,7 @@ export default function Projects() {
                           >
                             <span className="project-bullet">•</span>
                             <span className="project-desc">{feat.title}</span>
+                            {selectedFeature === i && <ChevronRight size={20} className="feature-chevron" />}
                           </button>
                           <div className={`feature-detail-inline ${selectedFeature === i ? 'feature-detail-inline--open' : ''}`}>
                             <div className="feature-detail-inline-inner">

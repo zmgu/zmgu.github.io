@@ -99,6 +99,14 @@ export const education: Education[] = [
   },
 ];
 
+export const skillColorMap: Record<string, string> = {
+  ...Object.fromEntries(skills.flatMap((cat) => cat.items.map((item) => [item, cat.color]))),
+  'Thymeleaf':               '#79B8FF',
+  'Vue':                     '#79B8FF',
+  'Tibero':                  '#85E89D',
+  'Corebase(자사 프레임워크)': '#FDAAA9',
+};
+
 export const navigation = [
   { id: 'hero',     label: 'About' },
   { id: 'projects', label: 'Projects' },
