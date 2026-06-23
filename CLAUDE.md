@@ -28,7 +28,7 @@ src/
 │   └── portfolio.ts                # 모든 콘텐츠 데이터
 ├── components/
 │   ├── Header.tsx                  # 고정 헤더, nav scroll spy 표시
-│   ├── Footer.tsx                  # 연락처 버튼 모음
+│   ├── Footer.tsx                  # copyright 표기만 존재
 │   └── sections/
 │       ├── Hero.tsx                # About 섹션 (소개+카드 / 기술스택 / 경력·자격증·교육)
 │       ├── Experience.tsx          # 미사용 (App.tsx에서 제거됨, 파일만 존재)
@@ -99,7 +99,7 @@ projects     // Project[] → { name, period, image, description, stack, feature
 ```css
 .app-root          /* min-h-screen, bg, font-family */
 .hero-section      /* pt-20 sm:pt-28, pb-16 sm:pb-24, border-b (그라데이션 없음) */
-.portfolio-section /* py-12 sm:py-20, border-b (Projects 사용) */
+.portfolio-section /* pt-3 pb-6 / sm: pt-5 pb-8, border-b (Projects 사용) */
 .reveal / .is-visible  /* 스크롤 진입 시 fade+slide 애니메이션 */
 max-w-6xl mx-auto px-4 sm:px-6   /* 모든 섹션 내부 컨테이너 */
 ```
@@ -159,8 +159,8 @@ max-w-6xl mx-auto px-4 sm:px-6   /* 모든 섹션 내부 컨테이너 */
 .career-projects    /* flex-wrap, gap 0.375rem, mt 0.625rem */
 .career-project-tag /* 0.8125rem, primary 계열 border/bg, color-text-medium */
 
-/* 자격증 (카드 배경 없음, flex-wrap 나열) */
-.cert-card          /* px-3 py-1.5, border primary 계열, 0.875rem */
+/* 자격증 (flex-wrap 나열) */
+.cert-card          /* px-3 py-1.5, border color-border(gray), 0.875rem, color-text, box-shadow */
 .cert-dot           /* w-1.5 h-1.5, primary */
 
 /* 교육 */
@@ -185,17 +185,17 @@ max-w-6xl mx-auto px-4 sm:px-6   /* 모든 섹션 내부 컨테이너 */
 .feature-list         /* sm: width 50%, space-y-3, 항목별 box-shadow */
 .feature-item / .feature-item--active  /* 활성 시 chevron 아이콘 표시 */
 .feature-chevron      /* 선택된 항목에만 primary 색상으로 표시 */
+.project-bullet       /* 비선택: color-text-subtle(gray), 선택: primary(0.25s transition) */
 .feature-detail-inline / --open  /* 모바일 아코디언 */
 .feature-detail-panel            /* sm: 우측 고정 패널, featurePanelIn 애니메이션, box-shadow */
-.feature-detail-title /* 0.75rem, color-text-muted (캡션 수준) */
+.feature-detail-title /* 0.75rem, color-text-muted (캡션 수준), border-bottom color-border */
 .feature-detail-body  /* 0.875rem, line-height 1.85, color-text */
 ```
 
 ### Footer (`footer.css`)
 
 ```css
-.footer-btn / .footer-icon / .footer-btn-text
-.cta-sub / .cta-copyright
+.cta-copyright   /* text-xs font-mono, color-text-subtle */
 ```
 
 ---
@@ -216,6 +216,7 @@ max-w-6xl mx-auto px-4 sm:px-6   /* 모든 섹션 내부 컨테이너 */
 - 모바일: `.feature-detail-inline` 아코디언 (grid-template-rows 트릭)
 - 데스크탑(sm:): `.feature-detail-panel` 우측 고정 패널 + featurePanelIn 애니메이션
 - 선택된 항목에 `ChevronRight` 아이콘 표시
+- `minHeights` + `panelRefs`: feature-panel 높이 고정 (항목 전환 시 레이아웃 shift 방지)
 
 ### 기술 스택 색상 (`portfolio.ts`)
 `skillColorMap`: skills 데이터 + 미등록 기술(Thymeleaf, Vue, Tibero, Corebase) 포함. Projects.tsx에서 뱃지 인라인 스타일에 활용.
@@ -254,6 +255,13 @@ max-w-6xl mx-auto px-4 sm:px-6   /* 모든 섹션 내부 컨테이너 */
 - 이메일 클립보드 복사 기능 + fade 애니메이션
 - 프로젝트 기술 뱃지 skillColorMap 색상 연동
 
+**UI 디테일 개선**
+- Footer: 연락처 버튼 제거, copyright 텍스트만 유지
+- 자격증 뱃지: border gray, 텍스트 흰색, 그림자 추가 (다른 섹션과 통일)
+- project-bullet: 비선택 시 gray, 선택 시 primary (0.25s transition)
+- feature-detail-title: border-bottom 구분선 추가
+- feature-panel: minHeight 고정으로 항목 전환 시 레이아웃 shift 방지
+
 ---
 
 ## 진행 중 / 예정
@@ -267,18 +275,6 @@ max-w-6xl mx-auto px-4 sm:px-6   /* 모든 섹션 내부 컨테이너 */
 - 섹션별 배경 변화로 리듬감 부여
 
 **영향 파일:** `index.css`, `hero.css`
-
----
-
-### P6. 자격증 섹션 처리
-
-**문제:** 현재 flex-wrap 뱃지 나열 방식이 경력·교육 섹션에 비해 볼륨감이 없어 위치나 형식이 애매함.
-
-**방향 (미결정):**
-- 카드형으로 변경
-- 위치 재배치 (교육 앞 또는 기술스택 옆)
-
-**영향 파일:** `Hero.tsx`, `experience.css`
 
 ---
 

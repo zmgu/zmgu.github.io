@@ -1,48 +1,23 @@
 @layer components {
 
   .footer {
-    @apply py-8 px-4;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   @media (min-width: 640px) {
     .footer {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
-  .footer-btn {
-    @apply flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg transition-all border w-full;
-    background-color: var(--color-bg-btn);
-    border-color: var(--color-border);
-  }
-  .footer-btn:hover {
-    background-color: rgb(var(--color-primary-rgb) / 0.1);
-    border-color: var(--color-primary);
-  }
-
-  .footer-icon {
-    @apply w-4 h-4;
-    color: var(--color-primary);
-  }
-
-  .footer-btn-text {
-    color: var(--color-text-medium);
-    font-size: 0.875rem;
-  }
-  .footer-btn:hover .footer-btn-text {
-    color: var(--color-primary);
-  }
-
-  .cta-sub {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-  }
-
   .cta-copyright {
-    @apply text-xs font-mono mt-10;
+    @apply text-xs font-mono;
     color: var(--color-text-subtle);
   }
 }

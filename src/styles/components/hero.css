@@ -331,14 +331,16 @@
   }
 
   .portfolio-section {
-    @apply py-12 border-b;
+    @apply border-b;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
     border-color: var(--color-border);
   }
 
   @media (min-width: 640px) {
     .portfolio-section {
       padding-top: 5rem;
-      padding-bottom: 5rem;
+      padding-bottom: 8rem;
     }
   }
 

@@ -75,8 +75,9 @@
     @apply px-3 py-1.5 rounded-md border font-medium;
     font-size: 0.875rem;
     background-color: var(--color-bg-card);
-    border-color: rgb(var(--color-primary-rgb) / 0.35);
-    color: var(--color-primary);
+    border-color: var(--color-border);
+    color: var(--color-text);
+    box-shadow: 3px 3px 8px rgb(0 0 0 / 0.15);
   }
 
   .cert-dot {

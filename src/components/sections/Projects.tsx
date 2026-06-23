@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { projects, Feature, skillColorMap } from '../../data/portfolio';
 
@@ -11,6 +11,16 @@ const renderFeatureDetail = (feat: Feature) => (
 
 export default function Projects() {
   const [selected, setSelected] = useState<Record<number, number>>({});
+  const [minHeights, setMinHeights] = useState<Record<number, number>>({});
+  const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    panelRefs.current.forEach((el, index) => {
+      if (!el) return;
+      const h = el.offsetHeight;
+      setMinHeights(prev => h > (prev[index] ?? 0) ? { ...prev, [index]: h } : prev);
+    });
+  });
 
   return (
     <section id="projects" className="portfolio-section">
@@ -62,7 +72,11 @@ export default function Projects() {
                 )}
 
                 {features.length > 0 && (
-                  <div className="feature-panel">
+                  <div
+                    ref={el => { panelRefs.current[index] = el; }}
+                    className="feature-panel"
+                    style={minHeights[index] ? { minHeight: minHeights[index] } : undefined}
+                  >
                     <ul className="feature-list">
                       {features.map((feat, i) => (
                         <li key={i}>
