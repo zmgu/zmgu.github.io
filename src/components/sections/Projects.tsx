@@ -4,7 +4,7 @@ import { projects, Feature, skillColorMap } from '../../data/portfolio';
 
 const renderFeatureDetail = (feat: Feature) => (
   <>
-    <div className="feature-detail-title">{feat.title}</div>
+    <div className="feature-detail-title">상세 내용</div>
     <div className="feature-detail-body">{feat.detail.join('\n')}</div>
   </>
 );
