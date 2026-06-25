@@ -36,7 +36,6 @@ export interface Project {
 export const profile = {
   name: '전민혁',
   title: 'Backend Developer',
-  badge: '함께 일하고 싶은 개발자',
   bio: [
     'Java 백엔드를 주력으로, 필요에 따라 프론트엔드까지 담당해온 개발자입니다.',
     '공공기관 상담 플랫폼 개발 및 운영을 통해 안정성과 유지보수성을 중심으로 개발 역량을 키워 왔습니다.',
@@ -52,14 +51,11 @@ export const contact = {
 
 export const skills: SkillCategory[] = [
   { category: '언어',        color: '#4EFFEA', items: ['Java', 'TypeScript'] },
-  { category: '프레임워크',   color: '#79B8FF', items: ['SpringBoot', 'eGovFrame', 'React'] },
-  { category: 'ORM / 쿼리',  color: '#B392F0', items: ['JPA', 'MyBatis'] },
-  { category: '데이터베이스', color: '#85E89D', items: ['Oracle', 'MySQL', 'Redis'] },
-  { category: '기타',        color: '#FDAAA9', items: ['JSP', 'Docker'] },
-];
-
-export const stats = [
-  { value: '2년+', label: '경력' },
+  { category: '프레임워크',  color: '#79B8FF', items: ['SpringBoot', 'eGovFrame', 'React'] },
+  { category: 'ORM / 쿼리', color: '#B392F0', items: ['JPA', 'MyBatis'] },
+  { category: '데이터베이스', color: '#85E89D', items: ['Oracle', 'MySQL', 'Tibero', 'Redis'] },
+  { category: '템플릿',      color: '#FDAAA9', items: ['JSP', 'Thymeleaf'] },
+  { category: '인프라',      color: '#FFA657', items: ['Docker'] },
 ];
 
 export const certifications: string[] = [
@@ -101,9 +97,7 @@ export const education: Education[] = [
 
 export const skillColorMap: Record<string, string> = {
   ...Object.fromEntries(skills.flatMap((cat) => cat.items.map((item) => [item, cat.color]))),
-  'Thymeleaf':               '#79B8FF',
   'Vue':                     '#79B8FF',
-  'Tibero':                  '#85E89D',
   'Corebase(자사 프레임워크)': '#FDAAA9',
 };
 

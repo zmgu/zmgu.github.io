@@ -23,20 +23,6 @@
     min-width: 0;
   }
 
-  /* ── 뱃지 ─────────────────────────────────────────── */
-
-  .about-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    margin-bottom: 1.25rem;
-    color: var(--color-primary);
-    background-color: rgb(var(--color-primary-rgb) / 0.1);
-    border: 1px solid rgb(var(--color-primary-rgb) / 0.3);
-  }
-
   /* ── 헤드라인 ─────────────────────────────────────── */
 
   .about-headline {
@@ -74,48 +60,6 @@
     .about-bio p { font-size: 1.0625rem; }
   }
 
-  /* ── 버튼 ─────────────────────────────────────────── */
-
-  .about-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .about-link-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.625rem 1.25rem;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    border: 1px solid var(--color-border);
-    background-color: var(--color-bg-btn);
-    color: var(--color-text-medium);
-    transition: all 0.2s ease;
-  }
-
-  .about-link-btn:hover {
-    border-color: rgb(var(--color-primary-rgb) / 0.5);
-    color: var(--color-primary);
-    background-color: rgb(var(--color-primary-rgb) / 0.08);
-  }
-
-  .about-link-btn--primary {
-    background-color: rgb(var(--color-primary-rgb) / 0.1);
-    border-color: rgb(var(--color-primary-rgb) / 0.4);
-    color: var(--color-primary);
-  }
-
-  .about-link-btn--primary:hover {
-    background-color: rgb(var(--color-primary-rgb) / 0.2);
-  }
-
-  .about-link-icon {
-    @apply w-4 h-4;
-  }
-
   /* ── 프로필 카드 ───────────────────────────────────── */
 
   .about-card {
@@ -151,36 +95,6 @@
     color: var(--color-text-muted);
     margin-top: 0.25rem;
     margin-bottom: 1.25rem;
-  }
-
-  /* ── 통계 ─────────────────────────────────────────── */
-
-  .about-stats {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 1.25rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .about-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
-  }
-
-  .about-stat-value {
-    font-size: 1.375rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--color-primary);
-  }
-
-  .about-stat-label {
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
   }
 
   /* ── 카드 링크 ────────────────────────────────────── */
@@ -333,14 +247,14 @@
   .portfolio-section {
     @apply border-b;
     padding-top: 3rem;
-    padding-bottom: 6rem;
+    padding-bottom: 4rem;
     border-color: var(--color-border);
   }
 
   @media (min-width: 640px) {
     .portfolio-section {
       padding-top: 5rem;
-      padding-bottom: 8rem;
+      padding-bottom: 5rem;
     }
   }
 
