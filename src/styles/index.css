@@ -1,6 +1,5 @@
 @import 'tailwindcss' source(none);
 @source '../**/*.{js,ts,jsx,tsx}';
-@import 'tw-animate-css';
 @import './components/header.css';
 @import './components/hero.css';
 @import './components/experience.css';
@@ -14,7 +13,6 @@
   --color-bg-page: #373737;
   --color-bg-page-rgb: 55 55 55;
   --color-bg-card: #3F3F3F;
-  --color-bg-card-hover: #484848;
   --color-bg-btn: #424242;
   --color-text: #FFFFFF;
   --color-text-medium: #C8C8C8;
